@@ -1,0 +1,55 @@
+* {
+  box-sizing: border-box !important;
+}
+
+@font-face {
+  font-family: titles;
+  src: url(/font/SF-Fedora-Outline.ttf);
+}
+@font-face {
+  font-family: special;
+  src: url(/font/SF-Fedora.ttf);
+}
+@font-face {
+  font-family: common;
+  src: url(/font/SF-Fedora-itles.ttf);
+}
+.fw-1 {
+  font-weight: 600 !important;
+}
+.f-special {
+  font-family: special;
+}
+.f-titles {
+  font-family: titles;
+}
+
+body {
+  margin: 0 !important;
+  padding: 0;
+  font-family: common !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: special;
+}
+p{
+ text-decoration:  none !important;
+}
+
+.invert {
+  filter: invert(20);
+  user-select: none !important;
+}
+
+
+@media screen and (max-width: 600px) {
+  html{
+    font-size: 13px !important;
+  }
+}
