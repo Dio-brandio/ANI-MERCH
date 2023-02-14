@@ -85,7 +85,7 @@ h6 {
 }
 
 .product-card:hover img {
-  transform: translateY(-2px) translateZ(9px);
+  transform: translateY(-2px) translateZ(-9px);
 }
 
 @media screen and (max-width: 600px) {

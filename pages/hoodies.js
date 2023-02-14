@@ -12,13 +12,13 @@ const Hoodies = () => {
           <Link href="products/tshirt"  >
             
             <div
-              className="bg-image hover-overlay hover-zoom ripple rounded"
+              className="bg-image hover-overlay hover-zoom  rounded"
               data-mdb-ripple-color="light"
             >
               <img
                 src="/slides/hoodie.png"
                 className="w-100"
-                alt="red,green,Blue Jeans Jacket"
+                alt="red,green"
               
               />
               
