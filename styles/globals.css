@@ -1,25 +1,32 @@
 * {
   box-sizing: border-box !important;
 }
-
+:root{
+  --transition: 0.2s ease-out;
+}
 @font-face {
   font-family: titles;
   src: url(/font/SF-Fedora-Outline.ttf);
 }
+
 @font-face {
   font-family: special;
   src: url(/font/SF-Fedora.ttf);
 }
+
 @font-face {
   font-family: common;
   src: url(/font/SF-Fedora-itles.ttf);
 }
+
 .fw-1 {
   font-weight: 600 !important;
 }
+
 .f-special {
   font-family: special;
 }
+
 .f-titles {
   font-family: titles;
 }
@@ -28,6 +35,18 @@ body {
   margin: 0 !important;
   padding: 0;
   font-family: common !important;
+}
+body::-webkit-scrollbar {
+  width: .25rem;
+}
+
+body::-webkit-scrollbar-track{
+  background: linear-gradient(to bottom, rgb(255, 255, 255), rgba(10, 10, 10, 0.534)) !important;
+}
+
+body::-webkit-scrollbar-thumb{
+  background: linear-gradient(to bottom,rgb(33,37,41), rgb(76, 84, 92)) !important;
+  border-radius: 12px;
 }
 
 h1,
@@ -38,18 +57,39 @@ h5,
 h6 {
   font-family: special;
 }
-p{
- text-decoration:  none !important;
-}
-
 .invert {
   filter: invert(20);
   user-select: none !important;
 }
+.product-card img{
+  transition: var(--transition);
+}
+.bg-image{
+  aspect-ratio: 1/1;
+  overflow: hidden;
+}
 
+.product-card {
+  transition: var(--transition);
+  transform-style: preserve-3d !important;
+  perspective: 20px;
+}
+
+.product-card a {
+  text-decoration: none !important;
+  color: black !important;
+}
+
+.product-card:hover {
+  box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 15%);
+}
+
+.product-card:hover img {
+  transform: translateY(-2px) translateZ(9px);
+}
 
 @media screen and (max-width: 600px) {
-  html{
+  html {
     font-size: 13px !important;
   }
 }

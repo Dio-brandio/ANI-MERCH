@@ -3,9 +3,9 @@ import Link from "next/link";
 import React from "react";
 const Navbar = () => {
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-dark f-special">
+    <nav className="navbar navbar-expand-lg navbar-dark bg-dark f-special shadow">
       <div className="container-fluid">
-        <a
+        <Link 
           className="navbar-brand d-flex flex-column align-items-center fw-1 "
           href="/"
         >
@@ -17,7 +17,7 @@ const Navbar = () => {
             priority
           />
           ANI MERCH
-        </a>
+        </Link>
         <div className="d-flex justify-content-between gap-3 order-lg-3 order-2">
           <Link href="/order" legacyBehavior>
             <a
@@ -53,7 +53,7 @@ const Navbar = () => {
           <ul className="navbar-nav mx-auto mb-2 mb-lg-0">
             <li className="nav-item">
               <Link href="/" legacyBehavior>
-                <a className="nav-link active" aria-current="page" href="#">
+                <a className="nav-link active" aria-current="true" href="#">
                   Home
                 </a>
               </Link>
@@ -72,15 +72,15 @@ const Navbar = () => {
                 </a>
               </Link>
             </li>
-            <li>
-              <Link href="/tshirts" legacyBehavior>
+            <li className="nav-item">
+              <Link href="/hoodies" legacyBehavior>
                 <a className="nav-link " aria-current="page" href="#">
                   Hoodies
                 </a>
               </Link>
             </li>
 
-            <li>
+            <li className="nav-item">
               <Link href="/contact" legacyBehavior>
                 <a className="nav-link " aria-current="page" href="#">
                   Contact us

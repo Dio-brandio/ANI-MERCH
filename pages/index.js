@@ -15,10 +15,10 @@ export default function Home() {
         </div>
       </div>
       <div className="container-fluid my-3">
-        <div className="container text-center">
+        <div className="container text-center p-sm-0">
           <h1 className="my-5">New Arrived</h1>
           <div className="row">
-            <div className="col-lg-3 shadow p-3 col-6 mb-3 mb-lg-4">
+            <div className="col-lg-3 product-card p-3 col-6 mb-3 mb-lg-4">
               <Link href="products/tshirt"  >
                 
                 <div
@@ -44,7 +44,7 @@ export default function Home() {
                 </div>
               </Link>
             </div>
-            <div className="col-lg-3 shadow p-3 col-6 mb-3 mb-lg-4">
+            <div className="col-lg-3 product-card p-3 col-6 mb-3 mb-lg-4">
               <Link href="products/tshirt"  >
                 
                 <div
@@ -61,16 +61,16 @@ export default function Home() {
 
                 <div className="product-info text-center text-lg-start">
 
-                  <p>
+                  <p className="">
                     <strong>Blue denim shirt</strong>
                   </p>
-                  <p>Color: blue</p>
-                  <p>Size: M</p>
-                  <p>3000₹</p>
+                  <p className="">Color: blue</p>
+                  <p className="">Size: M</p>
+                  <p className="">3000₹</p>
                 </div>
               </Link>
             </div>
-            <div className="col-lg-3 shadow p-3 col-6 mb-3 mb-lg-4">
+            <div className="col-lg-3 product-card p-3 col-6 mb-3 mb-lg-4">
               <Link href="products/tshirt"  >
                 
                 <div
