@@ -12,7 +12,7 @@ const Hoodies = () => {
           <Link href="products/tshirt"  >
             
             <div
-              className="bg-image hover-overlay hover-zoom  rounded"
+              className="bg-image hover-overlay hover-zoom rounded"
               data-mdb-ripple-color="light"
             >
               <img
@@ -113,10 +113,12 @@ const Hoodies = () => {
               <p>6999₹</p>
             </div>
           </Link>
+          
         </div>
       </div>
     </div>
   </div>
+    
   )
 }
 

@@ -3,7 +3,6 @@ const navitems = document.querySelectorAll('.nav-item')
 navitems.forEach((navitem)=>{
     navitem.addEventListener('click',(e)=>{
         const target = e.target
-        console.log(navitem);
         navitem.querySelector('.nav-link')
         navitem.children[0].classList.remove('active')
         const parent =target.parentElement.parentElement.children
