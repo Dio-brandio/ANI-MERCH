@@ -88,8 +88,9 @@ h6 {
 
 
 
-.product-card img{
+img{
   transition: var(--transition);
+  max-width: 100% !important;
 }
 .bg-image{
   aspect-ratio: 1/1;
@@ -119,7 +120,11 @@ h6 {
 
 /* For Mobile devices============================================================================================================= */
 
-
+@media screen and (767px<=width<=992px) {
+.bg-image{
+  aspect-ratio: 1/2;
+}
+}
 @media screen and (max-width: 600px) {
   html {
     font-size: 13px !important;
