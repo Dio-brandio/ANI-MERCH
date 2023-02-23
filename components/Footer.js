@@ -111,6 +111,8 @@ const Footer = () => {
           </div>
         </div>
       </footer>
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+      <script src="https://code.jquery.com/jquery-3.6.3.slim.min.js" integrity="sha256-ZwqZIVdD3iXNyGHbSYdsmWP//UBokj2FHAxKuSBKDSo=" crossOrigin="anonymous"></script>
     </div>
   );
 };

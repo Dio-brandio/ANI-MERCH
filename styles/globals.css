@@ -1,6 +1,4 @@
-* {
-  box-sizing: border-box !important;
-}
+  
 :root{
   --transition: 0.2s ease-out;
 }
@@ -30,11 +28,17 @@
 .f-titles {
   font-family: titles !important;
 }
-
+.f-common {
+  font-family: common !important;
+}
+/* .fs-sm{
+font-size: .8rem !important;
+} */
 body {
   margin: 0 !important;
-  padding: 0;
+  padding: 0 !important;
   font-family: common !important;
+  overflow-x: hidden !important;;
 }
 body::-webkit-scrollbar {
   width: .25rem;
@@ -82,11 +86,14 @@ h6 {
   background: rgba(95, 95, 95, 0.479) !important;
 }
 .sidecart{
- width:20rem ;
+ width:25rem ;
  user-select: none !important;
 }
 
-
+.navbar{
+  transition: var(--transition) !important;
+  z-index: 9999;
+}
 
 img{
   transition: var(--transition);
@@ -121,7 +128,7 @@ img{
 /* For Mobile devices============================================================================================================= */
 
 @media screen and (767px<=width<=992px) {
-.bg-image{
+.bg-sm-ratio{
   aspect-ratio: 1/2;
 }
 }
@@ -130,7 +137,7 @@ img{
     font-size: 13px !important;
   }
   .sidecart{
-    width: 15rem ;
+    width: 18rem ;
   }
 
 }

@@ -1,12 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
 import React, { useRef } from "react";
-const Navbar = () => {
-
+const Navbar = ({cart,addToCart , removeFromCart , clearCart, subTotal}) => {
 
 
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-dark f-special shadow">
+    <nav className="navbar navbar-expand-lg navbar-dark bg-dark f-special shadow position-sticky top-0">
       <div className="container-fluid">
         <Link
           className="navbar-brand d-flex flex-column align-items-center fw-1 "
@@ -18,6 +17,7 @@ const Navbar = () => {
             height={80}
             width={80}
             priority
+            className="logo"
           />
           ANI MERCH
         </Link>
@@ -25,35 +25,42 @@ const Navbar = () => {
           <a
             className="nav-link text-white"
             aria-current="page">
-            <i id="navbarDropdown"
+            <i id="dropdownMenuLink"
               role="button"
-              data-bs-toggle="dropdown"
               aria-expanded="false" className="bi bi-cart fs-2 cursor-pointer"></i>
-            <ol className="sidecart dropdown-menu border-light border-1 f-common right-0 px-5 bg-dark" aria-labelledby="navbarDropdown">
-              <li className="col-12 mt-2 border-white border-1 text-white p-2">
+            <ol className="sidecart fs-5 dropdown-menu border-light border-1 f-common right-0 px-5 bg-dark" aria-labelledby="dropdownMenuLink">
+              <div className="text-end "><i id="dropdownMenuLinkClose" className="bi fs-3 cursor-pointer text-white bi-x-circle"></i> </div>
+              {Object.keys(cart).length<1 && <div className="text-white">The Cart Is MT</div>}
+              
+              {Object.keys(cart).map((key)=>{
+                return  <li className="col-12  mt-3 border-white border-1 text-white p-2" key={key}>
                 <div className="row px-2">
-                  <div className="col-8  text-white">Anime Tshirt </div>
-                  <div className="col-4 text-center"> <p className="text-white">6</p> </div>
+                  <div className="col-8  text-white">{cart[key].pname}</div>
+                  <div className="col-4 text-center d-flex justify-content-between gap-2 align-items-center">
+                    <i className="cursor-pointer bi bi-dash-circle " onClick={()=>{removeFromCart(key,1,cart[key].size,cart[key].price,cart[key].varient,cart[key].pname )}}></i> 
+                    <font className="text-white qty">{cart[key].qty}</font>
+                   <i className="cursor-pointer bi bi-plus-circle " onClick={()=>{addToCart(key,1,cart[key].size,cart[key].price,cart[key].varient,cart[key].pname )}}></i></div>
                 </div>
               </li>
-              <li className="col-12 mt-2 border-white border-1 text-white p-2">
-                <div className="row px-2">
-                  <div className="col-8  text-white">Anime Tshirt </div>
-                  <div className="col-4 text-center"> <p className="text-white">6</p> </div>
+              })}
+          
+              
+              <div className="col-12 mt-3 border-white border-1 text-white p-2">
+                <div className="d-flex gap-2 flex-wrap flex-md-nowrap">
+                  <div >
+                    <button className="btn d-flex align-items-center gap-2 btn-light f-common">
+                    <i className="bi fs-5  bi-bag-check"></i>
+                      Checkout
+                    </button>
+                  </div>
+                  <div >
+                    <button className="btn d-flex align-items-center gap-2 btn-light f-common" onClick={clearCart}>
+                    <i className="bi fs-5  bi-cart3"></i>
+                      Clear Cart
+                    </button>
+                  </div>
                 </div>
-              </li>
-              <li className="col-12 mt-2 border-white border-1 text-white p-2">
-                <div className="row px-2">
-                  <div className="col-8  text-white">Anime Tshirt </div>
-                  <div className="col-4 text-center"> <p className="text-white">6</p> </div>
-                </div>
-              </li>
-              <li className="col-12 mt-2 border-white border-1 text-white p-2">
-                <div className="row px-2">
-                  <div className="col-8  text-white">Anime Tshirt </div>
-                  <div className="col-4 text-center"> <p className="text-white">6</p> </div>
-                </div>
-              </li>
+              </div>
             </ol>
 
 

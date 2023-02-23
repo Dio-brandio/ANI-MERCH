@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router'
 import { useRef, useState } from 'react'
-const Slug = () => {
+const Slug = ({addToCart}) => {
   const router = useRouter()
   const { slug } = router.query
   const [pincodeAvailable, setPincodeAvailable] = useState(null)
@@ -21,23 +21,24 @@ const Slug = () => {
         <div className="col-md-10">
           <div className="card">
             <div className="row">
-              <div className="col-md-6">
-                <div className="images p-3">
-                  <div className="bg-image p-4">
+              <div className="col-lg-6">
+                <div className="images p-1">
+                  <div className="text-center p-4">
                     <img id="main-image" src="/slides/chika.jpg" />
                   </div>
                 </div>
               </div>
-              <div className="col-md-6">
+              <div className="col-lg-6">
                 <div className="product p-4">
                   <div className="mt-4 mb-4"> <span className="text-uppercase text-muted brand">ANI MERCH</span>
-                    <h5 className="text-uppercase mt-2 mb-3">Chika t-shirt</h5>
+                    <h5 className="text-uppercase mt-2 mb-3">Chika t-shirt (M/White)</h5>
                     <div className="price d-flex flex-row align-items-center"> <span className="act-price">₹699.00</span>
                       <div className="ms-2"> <strike><small className="dis-price">₹6999.00</small></strike>  <span>90% OFF</span> </div>
                     </div>
                   </div>
-                  <p className="about">Shop from a wide range of t-shirt from ANI MERCH.</p>
+                  <p className="about">Shop from a wide range of t-shirt from ANI MERCH. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad quibusdam, facere neque natus commodi minima enim voluptas deserunt!</p>
                   <div className="sizes mt-4">
+                    <hr className="hr" />
                     <h6 className="text-uppercase my-3">Sizes</h6>
                     <div className="d-flex justify-content-between order-lg-3 order-2">
                       <div className="form-check">
@@ -69,8 +70,8 @@ const Slug = () => {
                   <hr className="hr" />
                   <div className="price d-flex flex-row align-items-center"> <span className="act-price">₹699.00</span></div>
                   <div className="cart mt-4 d-flex justify-content-md-between justify-content-center flex-wrap flex-lg-nowrap">
-                    <button className="btn  btn-dark text-uppercase me-3 my-2 px-4">
-                      <i className="bi fs-3 bi-cart mx-2"></i>
+                    <button className="btn  btn-dark text-uppercase me-3 my-2 px-4" onClick={()=>{addToCart(slug, 1, 'M', 699, 'White', 'Chika Tshirt')}}>
+                      <i className="bi fs-4 bi-cart mx-2"></i>
                       Add to cart
                     </button>
                     <button className="btn btn-lg btn-dark text-uppercase me-3 my-2 px-4">
