@@ -16,7 +16,7 @@ const Slug = ({addToCart}) => {
     }
   }
   return <>
-    <div className="container mt-5 mb-5">
+    <div className="container mt-10 mb-5">
       <div className="row d-flex justify-content-center">
         <div className="col-md-10">
           <div className="card">
@@ -70,7 +70,7 @@ const Slug = ({addToCart}) => {
                   <hr className="hr" />
                   <div className="price d-flex flex-row align-items-center"> <span className="act-price">₹699.00</span></div>
                   <div className="cart mt-4 d-flex justify-content-md-between justify-content-center flex-wrap flex-lg-nowrap">
-                    <button className="btn  btn-dark text-uppercase me-3 my-2 px-4" onClick={()=>{addToCart(slug, 1, 'M', 699, 'White', 'Chika Tshirt')}}>
+                    <button className="btn  btn-dark text-uppercase me-3 my-2 px-4" onClick={()=>{addToCart(slug, 1, 'M', 699, 'White', 'Chika Tshirt'),openCart()}}>
                       <i className="bi fs-4 bi-cart mx-2"></i>
                       Add to cart
                     </button>

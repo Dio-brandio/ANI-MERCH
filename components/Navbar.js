@@ -3,9 +3,9 @@ import Link from "next/link";
 import React, { useRef } from "react";
 const Navbar = ({cart,addToCart , removeFromCart , clearCart, subTotal}) => {
 
-
+const sidecart = useRef()
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-dark f-special shadow position-sticky top-0">
+    <nav className="navbar navbar-expand-lg navbar-light w-100 bg-transparent f-special position-fixed top-0">
       <div className="container-fluid">
         <Link
           className="navbar-brand d-flex flex-column align-items-center fw-1 "
@@ -21,15 +21,17 @@ const Navbar = ({cart,addToCart , removeFromCart , clearCart, subTotal}) => {
           />
           ANI MERCH
         </Link>
-        <div className="d-flex justify-content-between gap-3 order-lg-3 order-2  position-relative">
+        <div className="d-flex justify-content-between gap-3 order-lg-3 order-2  position-relative text-color-change">
           <a
-            className="nav-link text-white"
+            className="nav-link"
             aria-current="page">
-            <i id="dropdownMenuLink"
-              role="button"
+            <i id="dropdownMenuLink" role="button"
               aria-expanded="false" className="bi bi-cart fs-2 cursor-pointer"></i>
-            <ol className="sidecart fs-5 dropdown-menu border-light border-1 f-common right-0 px-5 bg-dark" aria-labelledby="dropdownMenuLink">
-              <div className="text-end "><i id="dropdownMenuLinkClose" className="bi fs-3 cursor-pointer text-white bi-x-circle"></i> </div>
+
+            <ol className="sidecart fs-5 dropdown-menu border-light border-1 f-common right-0 px-5 bg-dark" aria-labelledby="dropdownMenuLink" ref={sidecart}>
+              <div className="text-end ">
+                <i id="dropdownMenuLinkClose" className="bi fs-3 cursor-pointer text-white bi-x-circle"></i> 
+              </div>
               {Object.keys(cart).length<1 && <div className="text-white">The Cart Is MT</div>}
               
               {Object.keys(cart).map((key)=>{
@@ -67,7 +69,7 @@ const Navbar = ({cart,addToCart , removeFromCart , clearCart, subTotal}) => {
           </a>
           <Link href="/profile" legacyBehavior>
             <a
-              className="nav-link text-white fs-2 "
+              className="nav-link fs-2 "
               aria-current="page">
               <i className="bi bi-person-fill"></i>
             </a>
@@ -121,39 +123,6 @@ const Navbar = ({cart,addToCart , removeFromCart , clearCart, subTotal}) => {
                   Contact us
                 </a>
               </Link>
-            </li>
-
-            <li className="nav-item dropdown">
-              <a
-                className="nav-link dropdown-toggle"
-                href="#"
-                id="navbarDropdown"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                Dropdown
-              </a>
-              <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li>
-                  <a className="dropdown-item" href="#">
-                    Action
-                  </a>
-                </li>
-                <li>
-                  <a className="dropdown-item" href="#">
-                    Another action
-                  </a>
-                </li>
-                <li>
-                  <hr className="dropdown-divider" />
-                </li>
-                <li>
-                  <a className="dropdown-item" href="#">
-                    Something else here
-                  </a>
-                </li>
-              </ul>
             </li>
           </ul>
         </div>

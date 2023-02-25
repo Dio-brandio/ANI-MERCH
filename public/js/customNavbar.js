@@ -28,13 +28,23 @@ $(document).ready(function () {
         })
     })
     $(document).scroll(function () { 
-        const scrolly= $(this).scrollTop()
-        console.log(scrollY);
-        if (scrolly>=80) {
-           $(".logo").addClass('d-none');
+        const scrollOFBODY= $(document).scrollTop()
+        console.log($('#navbarSupportedContent').hasClass('show'));
+        if(!$('#navbarSupportedContent').hasClass('show')){
+            if (scrollOFBODY>$('.navbar').height()/3) {
+                $('.navbar').removeClass('bg-transparent navbar-light').addClass('bg-dark navbar-dark shadow')
+                $('.text-color-change .nav-link').addClass('text-white')
+                $('.logo').addClass('h-0')
+            }
+            else{
+                $('.navbar').removeClass('bg-dark navbar-dark shadow').addClass('bg-transparent navbar-light')
+                $('.text-color-change .nav-link').removeClass('text-white')
+                $('.logo').removeClass('h-0')
+            }
         }
-        else if(scrolly<80){
-           $(".logo").removeClass('d-none');
+        else{
+            $('.navbar').removeClass('bg-transparent navbar-light').addClass('bg-dark navbar-dark')
+            $('.text-color-change .nav-link').addClass('text-white')
         }
     });
 });

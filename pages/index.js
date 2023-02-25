@@ -9,7 +9,7 @@ export default function Home() {
       <Head>
         <title>Welcome to ANI MERCH</title>
       </Head>
-      <div className="">
+      <div className="mb-5 mt-10">
         <img src="/banner-1.png" className="w-100 " />
       </div>
       <div className="container-fluid my-3">

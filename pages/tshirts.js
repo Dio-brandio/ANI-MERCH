@@ -3,7 +3,7 @@ import Link from 'next/link'
 import React from 'react'
 const Tshirts = () => {
   return (
-    <div className="container-fluid my-3">
+    <div className="container-fluid mt-10">
     <div className="container text-center p-lg-1 p-0">
       <h1 className="my-5">New Arrived</h1>
       <div className="row">
