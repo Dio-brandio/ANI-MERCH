@@ -29,7 +29,6 @@ $(document).ready(function () {
     })
     $(document).scroll(function () { 
         const scrollOFBODY= $(document).scrollTop()
-        console.log($('#navbarSupportedContent').hasClass('show'));
         if(!$('#navbarSupportedContent').hasClass('show')){
             if (scrollOFBODY>$('.navbar').height()/3) {
                 $('.navbar').removeClass('bg-transparent navbar-light').addClass('bg-dark navbar-dark shadow')

@@ -4,7 +4,7 @@ import Image from 'next/image'
 
 const Hoodies = () => {
   return (
-    <div className="container-fluid my-3">
+    <div className="container-fluid mt-10">
     <div className="container text-center p-lg-1 p-0">
       <h1 className="my-5">Popular Items</h1>
       <div className="row">

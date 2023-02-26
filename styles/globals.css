@@ -94,6 +94,7 @@ height: 0 !important;
   background: rgba(95, 95, 95, 0.479) !important;
 }
 .sidecart{
+  top: 3rem;
  width:25rem ;
  user-select: none !important;
 }

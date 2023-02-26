@@ -1,20 +1,12 @@
+import Pincodecheck from '@/components/Pincodecheck'
 import { useRouter } from 'next/router'
 import { useRef, useState } from 'react'
 const Slug = ({addToCart}) => {
   const router = useRouter()
   const { slug } = router.query
-  const [pincodeAvailable, setPincodeAvailable] = useState(null)
-  const checkAvailabiltyInputRef = useRef()
 
-  const checkAvailabilty = async () => {
-    let res = await fetch('http://localhost:8001/')
-    if (res.ok) {
-      let pinarray = await res.json()
-      const isthere = pinarray.includes(parseInt(checkAvailabiltyInputRef.current.value))
-      // isthere?showMessageRef.current.innerText = "Yes its available":showMessageRef.current.innerText = "No its not available"
-      setPincodeAvailable(isthere)
-    }
-  }
+
+
   return <>
     <div className="container mt-10 mb-5">
       <div className="row d-flex justify-content-center">
@@ -70,7 +62,7 @@ const Slug = ({addToCart}) => {
                   <hr className="hr" />
                   <div className="price d-flex flex-row align-items-center"> <span className="act-price">₹699.00</span></div>
                   <div className="cart mt-4 d-flex justify-content-md-between justify-content-center flex-wrap flex-lg-nowrap">
-                    <button className="btn  btn-dark text-uppercase me-3 my-2 px-4" onClick={()=>{addToCart(slug, 1, 'M', 699, 'White', 'Chika Tshirt'),openCart()}}>
+                    <button className="btn  btn-dark text-uppercase me-3 my-2 px-4" onClick={()=>{addToCart(slug, 1, 'M', 699, 'White', 'Chika Tshirt')}}>
                       <i className="bi fs-4 bi-cart mx-2"></i>
                       Add to cart
                     </button>
@@ -79,19 +71,7 @@ const Slug = ({addToCart}) => {
                     </button>
 
                   </div>
-                  <div className="row g-3 mt-4 align-items-center">
-
-                    <div className="col-auto">
-                      <input type="text" id="pincode" ref={checkAvailabiltyInputRef} className="form-control" aria-describedby="passwordHelpInline" placeholder='Check your pincode' />
-                    </div>
-                    <div className="col-auto">
-                      <button className="btn btn-dark" onClick={checkAvailabilty} >Check Availabilty</button>
-                    </div>
-                    
-                    {!pincodeAvailable && pincodeAvailable!=null && <div className='text-danger'>This Pincode Is not available</div>}
-                    {pincodeAvailable && pincodeAvailable!=null && <div className='text-success'>This Pincode Is available</div>}
-                    
-                  </div>
+                    <Pincodecheck/>
                 </div>
               </div>
             </div>

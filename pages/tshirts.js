@@ -96,7 +96,6 @@ const Tshirts = () => {
                 src="/slides/tshirt.webp"
                 className="w-100"
                 alt="Blue Jeans Jacket"
-                
               />
               
             </div>

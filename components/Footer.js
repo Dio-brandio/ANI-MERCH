@@ -3,7 +3,7 @@ import Link from "next/link";
 import React from "react";
 const Footer = () => {
   return (
-    <div className="container-fluid bg-dark text-light">
+    <div className="container-fluid mt-5 bg-dark text-light">
       <footer className="w-100 py-4 flex-shrink-0">
         <div className="container py-4">
           <div className="row gy-4 gx-5">
