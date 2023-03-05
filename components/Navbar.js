@@ -86,18 +86,6 @@ const Navbar = ({ cart, addToCart, removeFromCart, clearCart, subTotal }) => {
                 </li>
               );
             })}
-            <li
-              className="col-12  mt-3 border-white border-1 text-white p-2"
-            >
-              <div className="row px-2">
-                <div className="col-8  text-white">sfdafsdfg</div>
-                <div className="col-4 text-center d-flex justify-content-between gap-2 align-items-center">
-                  <i className="cursor-pointer bi bi-dash-circle"></i>
-                  <font className="text-white qty">grsg</font>
-                  <i className="cursor-pointer bi bi-plus-circle "></i>
-                </div>
-              </div>
-            </li>
             <div className="col-12 mt-3 border-white border-1 text-white p-2">
               <div className="d-flex gap-2 flex-wrap flex-md-nowrap">
                 <div>

@@ -22,10 +22,11 @@ $(document).ready(function () {
     dropdownButton.addEventListener('click', () => {
         const sidecart = document.querySelector('.sidecart')
         sidecart.classList.add('show')
-        const closeButton = document.querySelector('#dropdownMenuLinkClose')
-        closeButton.addEventListener('click', () => {
-            sidecart.classList.remove('show')
-        })
+    })
+    const sidecart = document.querySelector('.sidecart')
+    const closeButton = document.querySelector('#dropdownMenuLinkClose')
+    closeButton.addEventListener('click', () => {
+        sidecart.classList.remove('show')
     })
     $(document).scroll(function () { 
         const scrollOFBODY= $(document).scrollTop()
