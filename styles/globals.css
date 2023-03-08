@@ -97,6 +97,8 @@ height: 0 !important;
   top: 3rem;
  width:25rem ;
  user-select: none !important;
+ overflow-y: auto;
+ max-height: 100vh;
 }
 
 .navbar{

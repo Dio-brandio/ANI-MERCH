@@ -27,9 +27,8 @@ export default function App({ Component, pageProps }) {
     localStorage.setItem('cart', JSON.stringify(mycart))
     let sbt = 0;
     let keys = Object.keys(mycart)
-
     for (let i = 0; i < keys.length; i++) {
-      sbt += mycart[keys]['price'] * mycart[keys]['qty']
+      sbt += mycart[keys[i]]['price'] * mycart[keys[i]]['qty']
     }
     setSubTotal(sbt)
     // Swal.fire('Your Data Has Been Saved!', '', 'success')

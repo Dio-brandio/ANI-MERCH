@@ -52,7 +52,11 @@ const Navbar = ({ cart, addToCart, removeFromCart, clearCart, subTotal }) => {
                   key={key}
                 >
                   <div className="row px-2">
-                    <div className="col-8  text-white">{cart[key].pname}</div>
+                    <div className="col-8 text-white">
+                      <h5>{cart[key].pname}</h5>
+                      <span className="fs-6">Size:{cart[key].size}, Color:{cart[key].varient}</span>
+                    
+                    </div>
                     <div className="col-4 text-center d-flex justify-content-between gap-2 align-items-center">
                       <i
                         className="cursor-pointer bi bi-dash-circle "

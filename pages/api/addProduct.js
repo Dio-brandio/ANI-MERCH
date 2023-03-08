@@ -1,5 +1,4 @@
 import Product from "../../models/Product";
-require('../../middleware/db')
 
 export default async function handler(req, res) {
     if (req.method=="POST") {

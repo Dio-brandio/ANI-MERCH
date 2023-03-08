@@ -79,24 +79,23 @@ const Checkout = ({ cart,addToCart,removeFromCart }) => {
               </button>
             </form>
           </div>
-          <div className="col-lg-6 p-3 ">
-            <ol className="sidecart bg-dark rounded fs-5 border-light border-1 f-common w-100 ">
+          <div className="col-lg-6 px-3  bg-dark rounded ">
               <h3 className="pt-3 text-white">Your Cart</h3>
               {Object.keys(cart).length < 1 && (
                 <div className="text-dark">The Cart Is MT</div>
               )}
+            <ol className="cart fs-5 border-light border-1 f-common w-100">
 
               {Object.keys(cart).map((key) => {
                 return (
-                  <li
-                    className="col-12  mt-3 border-white border-1 text-white p-2"
-                    key={key}
-                  >
+                  <li className="col-12 mt-3 border-white border-1 text-white p-3" key={key}>
                     <div className="row px-2">
-                      <div className="col-8  text-white">{cart[key].pname}</div>
+                      <div className="col-8  text-white">
+                      <h5>{cart[key].pname}</h5>
+                      <span className="fs-5">Size:{cart[key].size} , Color:{cart[key].varient}</span>
+                      </div>
                       <div className="col-4 text-center d-flex justify-content-between gap-2 align-items-center">
-                        <i
-                          className="cursor-pointer text-white bi bi-dash-circle "
+                        <i className="cursor-pointer text-white bi bi-dash-circle"
                           onClick={() => {
                             removeFromCart(
                               key,
@@ -105,12 +104,9 @@ const Checkout = ({ cart,addToCart,removeFromCart }) => {
                               cart[key].price,
                               cart[key].varient,
                               cart[key].pname
-                            );
-                          }}
-                        ></i>
+                            );}}></i>
                         <font className="text-white qty">{cart[key].qty}</font>
-                        <i
-                          className="cursor-pointer text-white bi bi-plus-circle "
+                        <i className="cursor-pointer text-white bi bi-plus-circle "
                           onClick={() => {
                             addToCart(
                               key,
@@ -120,8 +116,7 @@ const Checkout = ({ cart,addToCart,removeFromCart }) => {
                               cart[key].varient,
                               cart[key].pname
                             );
-                          }}
-                        ></i>
+                          }}></i>
                       </div>
                     </div>
                     <hr className="hr" />
